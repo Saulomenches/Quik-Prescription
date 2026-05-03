@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Prescription</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+<style>
+
+/* ------------------------ Geral ------------------------------*/
+  * {
+            margin: 0;
+            top: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div.navegador {
+            background-color:rgba(120, 170, 172, 0.976);
+            width: 100%;
+            height: 190px;
+            position: fixed;
+            z-index: 2;
+            border-bottom:  2px solid rgba(255, 255, 255, 0.675);
+        }
+
+        body {
+            background-color: cadetblue;
+            height: 100%;
+             }
+
+        body .navegador {
+            background-color:rgba(120, 170, 172, 0.976);
+            width: 100%;
+            height: 190px;
+            position: fixed;
+            z-index: 2;
+            border-bottom:  2px solid rgba(255, 255, 255, 0.675);
+        }
+
+           .navegador h1 {
+            font-size: 110px;
+            color: aliceblue;
+              font-family: "Henny Penny", system-ui;
+            text-align: center;
+         }
+
+ 
+          main div.container {
+            margin-top: 390px;
+            background-color: lightsalmon;
+            border-radius: 20px;
+            display: flex;
+            display: inline-block;
+            margin-left: 400px;
+            width: 500px;
+            text-align: start;
+            padding: 35px;
+            color: aliceblue;
+            font-size: 20px;
+            flex-wrap: flax nowrap;
+   
+           
+        
+          
+        
+          }
+
+          select  {
+          width: 50%;
+          font-size: 19px;
+          border-radius:5px ;
+          border: none;
+          color: cadetblue;
+           margin-top: 20px;
+          
+
+          }
+
+          #medicamentos {
+            width: 63%;
+            border-radius: 5px;
+            font-size: 19px;
+            border: none;
+            margin-top: 22px;
+          }
+
+          input {
+             width: 50%;
+             border: none;
+             color: cadetblue;
+              margin-top: 20px;
+          }
+
+          #farmacia {
+            width: 73%;
+            border-radius: 5px;
+            font-size: 19px;
+            outline: none;
+            border: none;
+            margin-top: 23px;
+          }
+
+          #quantidadeMed {
+               width: 69%;
+            border-radius: 5px;
+            font-size: 18px;
+            outline: none;
+            border: none;
+            margin-top:  23px;
+          }
+
+          #apresentacaoMed {
+              width: 65%;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            border: none;
+             margin-top:  23px;
+          }
+
+          #tempoAdm {
+              width: 65%;
+            border-radius: 5px;
+            font-size: 19px;
+            outline: none;
+            border: none;
+             margin-top: 23px;
+          }
+
+          #horaAdm {
+              width: 80%;
+            border-radius: 5px;
+            font-size: 17px;
+            outline: none;
+            border: none;
+             margin-top:  23px;
+          }
+
+          #duracaoAdm {
+             width: 75%;
+            border-radius: 5px;
+            font-size: 19px;
+            outline: none;
+            border: none;
+             margin-top:  23px;
+          }
+
+          #diasFinais {
+            width: 83%;
+            border-radius: 5px;
+            font-size: 18px;
+            outline: none;
+            border: none;
+             margin-top:  23px;
+          }
+
+          #submitTexto {
+            width: 190px;
+            height: 60px;
+            border-radius: 30px;
+            margin-left: 100px;
+            font-size: 17px;
+            outline: none;
+            border: none;
+            color: cadetblue;
+            cursor: pointer;
+            
+            
+          }
+            #submitTexto:hover {
+                border: 2px solid cadetblue; ;
+                background-color: rgba(255, 255, 255, 0.77);
+            }
+
+            #sessao #areaPrescricao {
+
+                background-color: antiquewhite;
+                 margin-left: 400px;
+                width: 500px;
+                 height: 580px;
+                 display: flex;
+                 margin-left: 960px;
+                 margin-top: -600px;
+                 border-radius: 20px;
+                 text-align: center;
+                 
+            }
+    
+
+</style> 
+
+
+<body>
+    <!------------------------------Navegador--------------------------------------->
+     <nav class="navegador">
+  <h1 id="titulo">
+    <a href="fimcalculadora.html">Quick Prescription</a>
+  </h1>
+</nav>
+
+    <main>
+       <!------------------------------ Container ----------------------------------->
+    <div class="container">
+        <label for="viaAdm"><strong>Via de administração</strong> </label>
+             <select  name="viaAdm" id="viaAdm" onchange="mostrarVia()">
+               <option value=""></option>
+               <option value="USO ORAL">Uso Oral</option>
+               <option value="USO TÓPICO">Uso Tópico</option>
+               <option value="USO OTOLÓGICO">Uso Otológico</option>
+               <option value="USO OFTÁLMICO">Uso Oftálmico</option>
+             </select> 
+
+   
+        <label for="medicamentos"><strong>Medicamentos</strong> </label>
+
+        <select name="medicamentos" id="medicamentos" onchange="mostrarMedicacao()">
+            <option value=""></option>
+            <option value="Dipirona gotas">Dipirona Gotas</option>
+            <option value="Dipirona 500 mg">Dipirona 500 mg</option>
+            <option value="Dipirona 1 g">Dipirona 1 g</option>
+            <option value="Tramadol 100mg/ml">Cloridrato de Tramadol 100 mg/ml</option>
+            <option value="Meloxicam 0,2 mg">Meloxicam 0,2 mg</option>
+            <option value="Meloxicam 0,5 mg">Meloxicam 0,5 mg</option>
+            <option value="Meloxicam 2 mg">Meloxicam 2 mg</option>
+            <option value="Vonau 4 mg">Vonau 4 mg</option>
+            <option value="Vonau 8 mg">Vonau 8 mg</option>
+        </select>
+
+
+
+           <label for="farmacia"  id="labelFarmacia"><strong>Farmácia</strong> </label>
+        
+          <select name="farmacia" id="farmacia" onchange="farmacia()">
+           <option value=""></option>
+                     <option value="Farmacia Humana">Farmácia Humana</option>
+                     <option value="Farmacia Veterinaria">Farmácia Veterinária</option>
+          </select> 
+
+
+        
+
+        <label for="quantidadeMed"><strong>Quantidade</strong> </label>
+        <input type="text" id="quantidadeMed" name="quantidadeMed" oninput="quantidadeMed()">
+        
+          
+  
+
+     <label for="apresentacaoMed"><strong>Apresentação</strong> </label>
+
+        <select name="apresentacaoMed" id="apresentacaoMed" onchange="apresentacaoMed()">
+           <option value=""></option>
+           <option value="ml">ml</option>
+           <option value="gotas">gotas</option>
+           <option value="gota">gota</option>
+           <option value="comprimido">comprimido</option>
+           <option value="comprimidos">comprimidos</option>
+        </select> 
+
+
+        <label for="tempoAdm"  id="tempo"><strong>Tempo de uso</strong> </label>
+        
+          <select name="tempoAdm" id="tempoAdm" onchange="tempoAdm()">
+           <option value=""></option>
+           <option value="a cada">a cada</option>
+        </select> 
+ 
+      
+
+        <label for="horaAdm" class="Hora-label"><strong>Horas</strong></label>
+        <select name="horaAdm" id="horaAdm" onchange="horaAdm()">
+           <option value=""></option>
+           <option value="4 horas">4 horas</option>
+           <option value="6 horas">6 horas</option>
+           <option value="8 horas">8 horas</option>
+           <option value="12 horas">12 horas</option>
+           <option value="24 horas">24 horas</option>
+        </select>
+
+ 
+
+          <label for="duracaoAdm" class="duracao-label"><strong>Duração</strong></label>
+
+           <select name="duracaoAdm" id="duracaoAdm" onchange="duracaoAdm()">
+              <option value=""></option>
+              <option value="durante">durante</option>
+              <option value="até novas recomendações">até novas recomendações</option>
+           </select> 
+
+    
+
+            <label for="diasFinais" class="diasFinais-label"><strong>Dias</strong></label>
+            <input type="number" id="diasFinais" oninput="diasFinais()">
+              
+          
+
+            
+        
+            <div id="respostaviaAdm"></div>
+            <div id="respostaMedicamentos"></div>
+            <div id="respostaquantidadeMed"></div>
+            <div id="respostaApresentacao"></div>
+            <div id="respostaTempoAdm"></div>
+            <div id="respostaHoraAdm"></div>
+            <div id="respostaDuracaoAdm"></div>
+            <div id="respostaFinalDias"></div>
+            <div id="prescricaoFinal"> </div> 
+            <br>
+            <br>
+
+             
+
+            <button id="submitTexto" onclick="somaPrescricao ()">Enviar Prescrição</button>
+
+        
+        
+              </main>
+
+              <section id="sessao">
+                
+
+        <div class="prescricao">
+
+            <p id="areaPrescricao">oi</p>
+
+        </div>
+
+
+              </section>
+           </div>   
+
+         
+    
+        <script>
+            // estado centralizado: guarda valores sem mostrar imediatamente
+            const state = {
+                viaAdm: '',
+                medicamentos: '',
+                farmacia: '',
+                quantidadeMed: '',
+                apresentacaoMed: '',
+                tempoAdm: '',
+                horaAdm: '',
+                duracaoAdm: '',
+                diasFinais: ''
+            }
+
+                function mostrarVia() {
+                const viaAdm = document.getElementById("viaAdm").value
+                // atualiza apenas o estado; não mostra imediatamente
+                state.viaAdm = viaAdm || ''
+                }
+
+                function mostrarMedicacao() {
+                const medicamentos = document.getElementById("medicamentos").value
+                // guarda no estado; não atualiza a UI agora
+                state.medicamentos = medicamentos || ''
+                }
+                function farmacia() {
+                    const farmacia = document.getElementById("farmacia").value
+                    // armazena no state; somente será mostrado ao enviar
+                    state.farmacia = farmacia || ''
+                }
+                
+
+                      function quantidadeMed() {
+                    let quantidadeMed = document.getElementById("quantidadeMed").value
+                    let respostaquantidadeMed = document.getElementById("respostaquantidadeMed")
+                                        state.quantidadeMed = quantidadeMed || ''
+                 }      
+
+                      function apresentacaoMed() {
+                          const apresentacaoMed = document.getElementById("apresentacaoMed").value
+                          state.apresentacaoMed = apresentacaoMed || ''
+                      }
+                      function tempoAdm () {
+                          const tempoAdm = document.getElementById("tempoAdm").value
+                          state.tempoAdm = tempoAdm || ''
+                      }
+                      function horaAdm () {
+                          const horaAdm = document.getElementById("horaAdm").value
+                          state.horaAdm = horaAdm || ''
+                      }
+                                 function duracaoAdm () {
+                                     const duracaoAdm = document.getElementById("duracaoAdm").value
+                                     state.duracaoAdm = duracaoAdm || ''
+                                 }
+                      function diasFinais () {
+                          const diasFinais = document.getElementById("diasFinais").value
+                          state.diasFinais = diasFinais || ''
+                          }
+                    let listasPrescricoes = []
+                                function somaPrescricao () {
+                                    // usar valores do estado (state) — os handlers já preencheram o state
+                                    const viaAdm = state.viaAdm
+                                    const medicamentos = state.medicamentos
+                                    const farmacia = state.farmacia
+                                    const quantidadeMed = state.quantidadeMed
+                                    const apresentacaoMed = state.apresentacaoMed
+                                    const tempoAdm = state.tempoAdm
+                                    const horaAdm = state.horaAdm
+                                    const duracaoAdm = state.duracaoAdm
+                                    const diasFinais = state.diasFinais
+                                    const prescricaoFinal = document.getElementById("prescricaoFinal")
+
+                                    if (!prescricaoFinal) return
+
+                                    // montar texto a partir do state
+                                    const linha1 = viaAdm ? `<strong>${viaAdm}</strong>` : ''
+
+                                    // formatar label da farmácia (com acento) usando if/else para ficar mais legível
+                                    let farmaciaDisplay = ''
+                                    if (farmacia === 'Farmacia Humana') {
+                                        farmaciaDisplay = 'Farmácia Humana'
+                                    } else if (farmacia === 'Farmacia Veterinaria') {
+                                        farmaciaDisplay = 'Farmácia Veterinária'
+                                    }
+
+                                    let farmaciaLabel = ''
+                                    if (farmaciaDisplay) {
+                                        farmaciaLabel = ` (${farmaciaDisplay})`
+                                    }
+
+                                    // montar linha2 e linha3 usando if/else ao invés de ternário aninhado
+                                    let linha2 = ''
+                                    if (medicamentos) {
+                                        linha2 = `<p><strong>${medicamentos}</strong>${farmaciaLabel}</p>`
+                                    }
+
+                                    let linha3 = ''
+                                    if (quantidadeMed || apresentacaoMed || horaAdm || diasFinais) {
+                                        linha3 = `<p>Dê ${quantidadeMed || ''} ${apresentacaoMed || ''}${tempoAdm ? ', ' + tempoAdm : ''}${horaAdm ? ', ' + horaAdm : ''}${duracaoAdm ? ' durante ' + duracaoAdm : ''}${diasFinais ? ' por ' + diasFinais + ' dias' : ''}.</p>`
+                                    }
+
+                                    prescricaoFinal.innerHTML += `${linha1}${linha2}${linha3}`
+                                }
+
+                    
+        </script>
+</body>
+</html>  

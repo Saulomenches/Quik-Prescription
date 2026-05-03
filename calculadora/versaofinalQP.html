@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Prescription</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+</head>
+<style>
+
+/* ------------------------ Geral ------------------------------*/
+  * {
+            margin: 0;
+            top: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .cabecalho {
+            background-color:rgba(120, 170, 172, 0.976);
+            width: 100%;
+            height: 230px;
+            position: fixed;
+            border-bottom:  2px solid rgba(255, 255, 255, 0.675);
+            display: flex;
+            
+        }
+
+        body {
+            background-color: cadetblue;
+            height: 100%;
+             }
+
+        body .navegador {
+            background-color:rgba(120, 170, 172, 0.976);
+            width: 100%;
+            height: 230px;
+            position: fixed;
+            z-index: 2;
+            border-bottom:  2px solid rgba(255, 255, 255, 0.675);
+        }
+
+           .cabecalho {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+
+           background-color: rgba(120, 170, 172, 0.976);
+           height: 190px;
+           padding: 0 40px;
+        }
+
+           .cabecalho h1 {
+           font-size: 110px;
+           color: aliceblue;
+           font-family: "Henny Penny", system-ui;
+        }
+
+           a {
+           color: white;
+           text-decoration: none;
+           font-size: 30px;
+           margin-right:  40px;
+            border-bottom: solid 4px lightsalmon;
+        }
+            img {
+              width: 180px;
+              padding-left: 80px;
+            
+            }
+
+            main {
+                width: 100%;
+                height: 2000px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+                
+            }
+
+            #areaLaranja {
+                background-color: lightsalmon;
+                width: 700px;
+                height: 960px;
+                border-radius: 20px;
+                border: solid 4px white;
+                box-shadow: 5px 5px 6px 5px rgba(44, 41, 41, 0.253);
+                
+              
+     
+            }
+ 
+             #areaBranca {
+                background-color:rgba(240, 248, 255, 0);
+                width: 700px;
+                height: 960px;
+                border-radius: 20px;
+                
+                
+                
+                
+            }
+            #areaReceita {
+                 width: 700px;
+                 min-height: 960px;
+                height: auto;
+                border-radius: 20px;
+                background-color: aliceblue;
+                padding: 30px;
+                font-size: 26px;
+                  box-shadow: 5px 5px 6px 5px rgba(44, 41, 41, 0.253);
+                
+            
+            }
+
+            label {
+                color: aliceblue;
+                display: flex;
+                text-align: start;
+                padding: 16px;
+                font-size: 28px;
+                font-family: "DM Serif Display", serif;
+                
+                
+            }
+
+            input:focus {
+            
+               outline: none;
+            }
+            
+        
+
+            .campo {
+                display: flex;
+                font-size: 50px;
+                padding: 10px;
+                padding-left: 17px;
+                
+              
+            }
+
+            #viaAdm {
+
+            width: 280px;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 10px;
+            }
+            
+            #medicamentos {
+                width: 350px;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 10px;
+            }
+            
+
+            #farmacia {
+                 width: 410px;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 10px;
+            }
+
+            #quantidadeMed {
+            width: 380px;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 10px;
+            }
+
+            #apresentacaoMed {
+            width: 370px;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 10px;
+            }  
+
+            #tempoAdm {
+                width: 358px;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 10px;
+            }
+            
+
+            #horaAdm {
+            width: 450px;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 10px;
+            }
+
+            #duracaoAdm {
+            width: 420px;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 10px;
+            }
+
+            #diasFinais {   
+            width: 459px;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 10px;
+            margin-left: -20px;
+            }
+
+            #submitTexto {
+                width: 400px;
+                height: 80px;border-radius: 40px ;
+                font-size: 26px;
+                margin-left: 90px;
+                margin-top: 26px;
+                border: solid cadetblue 3px;
+                cursor: pointer;
+                outline: none;
+                color: lightsalmon;
+                font-family: "DM Serif Display", serif;
+                
+            
+                
+                
+            }
+
+            submitTexto:hover {
+                background-color: cadetblue
+            }
+
+</style> 
+
+
+<body>
+   
+    <header>
+        <nav class="cabecalho">
+            
+            <img src="../forms_add_on_99dp_FFA07A_FILL0_wght700_GRAD200_opsz48.svg" alt="">
+            <h1 id="titulo"> Quick Prescription</h1>
+            <a href="http://127.0.0.1:5500/fimcalculadora.html">Calculadora</a>
+        </nav>
+    </header>
+    
+<main>
+
+    <section id="areaLaranja">
+  
+    <div class="campo">  
+        <label for="viaAdm"><strong>Via de administração</strong> </label>
+             <select  name="viaAdm" id="viaAdm">
+               <option value=""></option>
+               <option value="USO ORAL">Uso Oral</option>
+               <option value="USO TÓPICO">Uso Tópico</option>
+               <option value="USO OTOLÓGICO">Uso Otológico</option>
+               <option value="USO OFTÁLMICO">Uso Oftálmico</option>
+             </select> 
+    </div>  
+   
+
+    <div class="campo"> 
+        <label for="medicamentos"><strong>Medicamentos</strong> </label>
+            <select name="medicamentos" id="medicamentos"> 
+
+                <option value=""></option>
+                <option value="Dipirona gotas">Dipirona Gotas</option>
+                <option value="Dipirona 500 mg">Dipirona 500 mg</option>
+                <option value="Dipirona 1 g">Dipirona 1 g</option>
+                <option value="Tramadol 100mg/ml">Cloridrato de Tramadol 100 mg/ml</option>
+                <option value="Meloxicam 0,2 mg">Meloxicam 0,2 mg</option>
+                <option value="Meloxicam 0,5 mg">Meloxicam 0,5 mg</option>
+                <option value="Meloxicam 2 mg">Meloxicam 2 mg</option>
+                <option value="Vonau 4 mg">Vonau 4 mg</option>
+                <option value="Vonau 8 mg">Vonau 8 mg</option>
+
+            </select>
+
+ </div>  
+
+     <div class="campo"> 
+         <label for="farmacia"  id="labelFarmacia"><strong>Farmácia</strong> </label>
+            <select name="farmacia" id="farmacia">
+                <option value=""></option>
+                <option value="Farmacia Humana">Farmácia Humana</option>
+                <option value="Farmacia Veterinaria">Farmácia Veterinária</option>
+            </select> 
+ </div>  
+
+ <div class="campo"> 
+         <label for="quantidadeMed"><strong>Quantidade</strong> </label>
+             <select name="quantidadeMed" id="quantidadeMed">
+                 <option value=""></option>
+                 <option value="1/4">1/4</option>
+                 <option value="1/2">1/2</option>
+                 <option value="3/4">3/4</option>
+                 <option value="1">1</option>
+                 <option value="1 + 1/4">1 + 1/4</option>
+                 <option value="1/2">1 + 1/2</option>
+                 <option value="1 + 3/4">1 + 3/4</option>
+                 <option value="2">2</option>
+                 <option value="2 + 1/4">2 + 1/4</option>
+                 <option value="2 + 1/2">2 + 1/2</option>
+                <option value="2 + 3/4">2 + 3/4</option>
+                <option value="3">3</option>
+            </label>
+            </select> 
+ </div>  
+           
+    <div class="campo"> 
+         <label for="apresentacaoMed">Apresentação</label>
+             <select name="apresentacaoMed" id="apresentacaoMed">
+                 <option value=""></option>
+                 <option value="ml">ml</option>
+                 <option value="gotas">gotas</option>
+                 <option value="gota">gota</option>
+                 <option value="comprimido">comprimido</option>
+                 <option value="comprimidos">comprimidos</option>
+             </select> 
+
+</div>  
+
+   <div class="campo"> 
+         <label for="tempoAdm"  id="tempo"><strong>Tempo de uso</strong> </label>
+             <select name="tempoAdm" id="tempoAdm">
+                  <option value=""></option>
+                 <option value="a cada">a cada</option>
+        </select> 
+ 
+   
+</div>     
+      <div class="campo"> 
+         <label for="horaAdm" class="Hora-label"><strong>Horas</strong></label>
+             <select name="horaAdm" id="horaAdm">
+                 <option value=""></option>
+                 <option value="4 horas">4 horas</option>
+                 <option value="6 horas">6 horas</option>
+                 <option value="8 horas">8 horas</option>
+                 <option value="12 horas">12 horas</option>
+                 <option value="24 horas">24 horas</option>
+             </select>
+</div>  
+ 
+     <div class="campo"> 
+         <label for="duracaoAdm" class="duracao-label"><strong>Duração</strong></label>
+             <select name="duracaoAdm" id="duracaoAdm">
+                 <option value=""></option>
+                 <option value="durante">durante</option>
+                 <option value="até novas recomendações">até novas recomendações</option>
+             </select> 
+</div>  
+
+ <div class="campo"> 
+            <label for="diasFinais" class="diasFinais-label"><strong>Dias</strong></label>
+             <label for="diasFinais"><strong></strong> </label>
+             <select name="diasFinais" id="diasFinais">
+                 <option value=""></option>
+                 <option value="1">1</option>
+                 <option value="2">2</option>
+                 <option value="3">3</option>
+                 <option value="4">4</option>
+                 <option value="5">5</option>
+                 <option value="6">6</option>
+                 <option value="7">7</option>
+                 <option value="8">8</option>
+                 <option value="9">9</option>
+                 <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                 <option value="14">14</option>
+                 <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="28">28</option>
+                <option value="30">30</option>
+                <option value="32">32</option>
+                
+            </label>
+            </select> 
+   </div>            
+
+       
+            
+           
+
+            <button id="submitTexto" onclick="somaPrescricao ()">Enviar Prescrição</button>
+
+       <!-- <div id="prescricaoFinal"> </div> -->
+
+
+        </section>
+
+        <section id="areaBranca">
+
+        <div name="areaReceita" id="areaReceita"></div>
+
+        </section>    
+        
+</main>      
+
+
+          
+    
+        <script>
+
+                areaReceita.innerHTML += bloco
+            function somaPrescricao () {
+                    
+                  const viaAdm = document.getElementById("viaAdm").value
+                  const medicamentos = document.getElementById("medicamentos").value
+                  const farmacia = document.getElementById("farmacia").value
+                  const quantidadeMed = document.getElementById("quantidadeMed").value
+                  const apresentacaoMed = document.getElementById("apresentacaoMed").value
+                  const tempoAdm = document.getElementById("tempoAdm").value
+                  const horaAdm = document.getElementById("horaAdm").value
+                  const duracaoAdm = document.getElementById("duracaoAdm").value
+                  const diasFinais = document.getElementById("diasFinais").value
+                  
+                  const areaReceita= document.getElementById("areaReceita") 
+
+                 
+
+                  const somaTudo = viaAdm + farmacia + medicamentos  + quantidadeMed + apresentacaoMed + tempoAdm
+                  + horaAdm + duracaoAdm + diasFinais 
+                   areaReceita.innerHTML += `<strong>${viaAdm}</strong><br><br>
+                <strong>${medicamentos}</strong> (${farmacia})<br>
+
+                Dê ${quantidadeMed} ${apresentacaoMed}, a cada ${horaAdm} durante ${diasFinais} dias.`
+                 }
+        </script>
+// </body>
+// </html>  
